@@ -1,10 +1,10 @@
 import * as S from "./styles";
 import logo from "../../assets/img/github-img.png";
 import gitIcon from "../../assets/img/logo-git.png";
-
 export const Login = () => {
   return (
     <S.Container>
+      {/* <Link to="/home"> home</Link> */}
       <S.Content>
         <img src={logo} alt="logo do git hub" />
         <h1>Sign in</h1>

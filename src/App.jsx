@@ -1,11 +1,9 @@
-import { Home } from "./pages/Home";
-import { Login } from "./pages/Login";
+import { Routes } from "./Router";
 
 function App() {
   return (
     <>
-      <Login></Login>
-      <Home></Home>
+      <Routes></Routes>
     </>
   );
 }
