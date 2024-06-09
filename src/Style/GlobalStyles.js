@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body{
     min-height: 100vh;
+    background-color: #c3c3c3;
   }
   button{
     cursor: pointer;

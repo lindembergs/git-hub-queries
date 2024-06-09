@@ -44,5 +44,6 @@ export const Content = styled.div`
 
 export const Input = styled.input`
   width: 320px;
-  height: 50px;
+  height: 40px;
+  border: 2px solid gray;
 `;
