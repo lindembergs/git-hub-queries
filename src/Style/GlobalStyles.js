@@ -7,9 +7,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
   }
-  body{
+ html, body, :root{
     min-height: 100vh;
-    background-color: #c3c3c3;
+    background-color: #E6E6E6;
+    font-size: 14px;
   }
   button{
     cursor: pointer;

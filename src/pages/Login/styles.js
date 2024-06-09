@@ -16,7 +16,8 @@ export const Content = styled.div`
   margin: 0 auto;
   gap: 10px;
   h1 {
-    margin-right: 235px;
+    margin-right: 252px;
+    font-size: 19px;
   }
   img {
     width: 330px;
@@ -32,14 +33,17 @@ export const Content = styled.div`
   }
   button img {
     height: 20px;
-    width: 20px;
+    width: 30px;
   }
 `;
 
 export const Input = styled.input`
   width: 320px;
   height: 40px;
-  border: 2px solid gray;
+  border: 2px solid #5b5b5b;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
 `;
 
 export const Button = styled.button`
@@ -47,4 +51,11 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   gap: 5px;
+  background-color: ${(props) => props.bg || "unset"};
+  color: ${(props) => props.color || "unset"};
+  height: 45px;
+  border-radius: 8px;
+  border: ${(props) => props.bn || "2px solid black"};
+  font-size: ${(props) => props.fs || "15px"};
+  font-weight: 500;
 `;

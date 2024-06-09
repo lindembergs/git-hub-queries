@@ -9,11 +9,13 @@ export const Login = () => {
         <img src={logo} alt="logo do git hub" />
         <h1>Sign in</h1>
         <form action="">
-          <S.Input></S.Input>
-          <S.Input></S.Input>
-          <S.Button type="submit">Entrar</S.Button>
+          <S.Input placeholder="E-mail"></S.Input>
+          <S.Input placeholder="Senha"></S.Input>
+          <S.Button bn="none" color="white" bg="black" type="submit">
+            Entrar
+          </S.Button>
           <span>ou</span>
-          <S.Button>
+          <S.Button bg="white" type="button">
             <img src={gitIcon} alt="" /> Continuar com Github
           </S.Button>
         </form>
