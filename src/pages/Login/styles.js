@@ -14,4 +14,8 @@ export const Content = styled.div`
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
+  img {
+    width: 330px;
+    height: 120px;
+  }
 `;
