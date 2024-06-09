@@ -30,12 +30,6 @@ export const Content = styled.div`
   span {
     text-align: center;
   }
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-  }
   button img {
     height: 20px;
     width: 20px;
@@ -46,4 +40,11 @@ export const Input = styled.input`
   width: 320px;
   height: 40px;
   border: 2px solid gray;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 `;

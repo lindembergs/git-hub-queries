@@ -11,11 +11,11 @@ export const Login = () => {
         <form action="">
           <S.Input></S.Input>
           <S.Input></S.Input>
-          <button type="submit">Entrar</button>
+          <S.Button type="submit">Entrar</S.Button>
           <span>ou</span>
-          <button>
+          <S.Button>
             <img src={gitIcon} alt="" /> Continuar com Github
-          </button>
+          </S.Button>
         </form>
       </S.Content>
     </S.Container>
