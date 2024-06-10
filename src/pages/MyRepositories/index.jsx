@@ -3,7 +3,7 @@ import * as S from "./styles";
 import { FaBars } from "react-icons/fa";
 import { Aside } from "../../components/Aside";
 import gitIcon from "../../assets/img/logo-git.png";
-export const Home = () => {
+export const MyRepositories = () => {
   const [sidebar, setSidebar] = useState(true);
 
   const showSiderbar = () => setSidebar(!sidebar);
