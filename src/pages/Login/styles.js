@@ -58,4 +58,5 @@ export const Button = styled.button`
   border: ${(props) => props.bn || "2px solid black"};
   font-size: ${(props) => props.fs || "15px"};
   font-weight: 500;
+  width: 100%;
 `;
