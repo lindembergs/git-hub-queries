@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
  html, body, :root{
     min-height: 100vh;
     background-color: #E6E6E6;
-    background-color: black;
     font-size: 14px;
   }
   button{

@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Header = styled.header`
   height: 100px;
   display: flex;
-  background-color: #1a202c;
-  box-shadow: 0 0 20px 3px;
-
   > svg {
     position: fixed;
     color: white;
@@ -14,5 +11,22 @@ export const Container = styled.div`
     margin-top: 32px;
     margin-left: 32px;
     cursor: pointer;
+  }
+`;
+
+export const UserNameAndImg = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -65px;
+  span {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  img {
+    width: 40px;
+    height: 25px;
+    border-radius: 50%;
   }
 `;
