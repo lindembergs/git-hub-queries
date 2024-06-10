@@ -1,10 +1,5 @@
+import { Aside } from "../../components/Aside";
+
 export const Home = () => {
-  return (
-    <div>
-      <p>works</p>
-      <p>works</p>
-      <p>works</p>
-      <p>works</p>
-    </div>
-  );
+  return <Aside></Aside>;
 };
