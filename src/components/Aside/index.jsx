@@ -11,7 +11,7 @@ export const Aside = ({ active }) => {
     <S.Container sidebar={active}>
       <FaTimes onClick={closeSidebar} />
       <S.Content>
-        <img src={logo} alt="" />
+        <img src={logo} alt="logo do Git Hub" />
         <S.PageOptions>
           <FaArchive></FaArchive>
           <span>Meus repositórios</span>

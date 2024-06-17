@@ -59,4 +59,5 @@ export const Button = styled.button`
   font-size: ${(props) => props.fs || "15px"};
   font-weight: 500;
   width: 100%;
+  cursor: pointer;
 `;

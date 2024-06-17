@@ -53,9 +53,11 @@ export const PageOptions = styled.div`
   svg {
     color: white;
     font-size: 20px;
+    cursor: pointer;
   }
   span {
     color: #fff;
+    cursor: pointer;
   }
 `;
 
