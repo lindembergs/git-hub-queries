@@ -5,6 +5,7 @@ import { FaBars } from "react-icons/fa";
 import { Aside } from "../../components/Aside";
 import gitIcon from "../../assets/img/logo-git.png";
 import { Input } from "../../components/Input";
+import { Repositories } from "../../components/Repositories";
 export const MyRepositories = () => {
   const [sidebar, setSidebar] = useState(true);
 
@@ -23,6 +24,7 @@ export const MyRepositories = () => {
       <MainContainer>
         <h2>Meus repositórios</h2>
         <Input></Input>
+        <Repositories></Repositories>
       </MainContainer>
     </>
   );
