@@ -18,6 +18,7 @@ export const MyRepositories = () => {
         <span>Lindemberg Silva</span>
         <img src={gitIcon} alt="imagem do usuário" />
       </S.UserNameAndImg>
+      <h2>Meus repositórios</h2>
     </>
   );
 };

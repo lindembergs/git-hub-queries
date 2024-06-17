@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  flex: 1;
   background-color: #222222;
   position: fixed;
   height: 100%;
@@ -77,5 +78,6 @@ export const Logout = styled.div`
   }
   span {
     font-size: 16px;
+    cursor: pointer;
   }
 `;
