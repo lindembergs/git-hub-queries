@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as S from "./styles";
+import { MainContainer } from "../../components/MainContainer/style";
 import { FaBars } from "react-icons/fa";
 import { Aside } from "../../components/Aside";
 import gitIcon from "../../assets/img/logo-git.png";
@@ -18,7 +19,9 @@ export const MyRepositories = () => {
         <span>Lindemberg Silva</span>
         <img src={gitIcon} alt="imagem do usuário" />
       </S.UserNameAndImg>
-      <h2>Meus repositórios</h2>
+      <MainContainer>
+        <h2>Meus repositórios</h2>
+      </MainContainer>
     </>
   );
 };
