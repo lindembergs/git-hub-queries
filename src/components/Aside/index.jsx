@@ -2,6 +2,7 @@ import * as S from "./styles";
 import { FaTimes } from "react-icons/fa";
 import { FaArchive, FaUser, FaSistrix, FaSignOutAlt } from "react-icons/fa";
 import logo from "../../assets/img/github-img.svg";
+import { Link } from "react-router-dom";
 export const Aside = ({ active }) => {
   const closeSidebar = () => {
     active(false);
@@ -18,7 +19,9 @@ export const Aside = ({ active }) => {
         </S.PageOptions>
         <S.PageOptions>
           <FaSistrix />
-          <span>Outros repositórios</span>
+          <Link to="/outrosrepositórios">
+            <span>Outros repositórios</span>
+          </Link>
         </S.PageOptions>
         <S.PageOptions>
           <FaUser />
