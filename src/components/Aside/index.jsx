@@ -15,7 +15,9 @@ export const Aside = ({ active }) => {
         <img src={logo} alt="logo do Git Hub" />
         <S.PageOptions>
           <FaArchive></FaArchive>
-          <span>Meus repositórios</span>
+          <Link to="/meusrepositórios">
+            <span>Meus repositórios</span>
+          </Link>
         </S.PageOptions>
         <S.PageOptions>
           <FaSistrix />
