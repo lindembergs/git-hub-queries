@@ -27,7 +27,9 @@ export const Aside = ({ active }) => {
         </S.PageOptions>
         <S.PageOptions>
           <FaUser />
-          <span>Buscar usuários</span>
+          <Link to="/buscarusuários">
+            <span>Buscar usuários</span>
+          </Link>
         </S.PageOptions>
         <S.Logout>
           <div>
