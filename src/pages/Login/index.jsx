@@ -1,18 +1,20 @@
 import * as S from "./styles";
 import logo from "../../assets/img/github-img.png";
 import gitIcon from "../../assets/img/logo-git.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signInWithPopup, GithubAuthProvider } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
 
 export const Login = () => {
+  const navigate = useNavigate();
+
   const handleGitHubLogin = async () => {
     const provider = new GithubAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log(user);
-      // Redirecionar ou tratar o usuário logado conforme necessário
+      navigate("/meusrepositórios");
     } catch (error) {
       console.error(error);
     }
