@@ -14,6 +14,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth(firebaseConfig);
+const auth = getAuth(app);
 export { analytics, auth };
-// https://git-hub-queries.firebaseapp.com/__/auth/handler
