@@ -3,19 +3,31 @@ import logo from "../../assets/img/github-img.png";
 import gitIcon from "../../assets/img/logo-git.png";
 import { Link, useNavigate } from "react-router-dom";
 import { authWithGitHub } from "../../services/auth";
+import { useEffect, useState } from "react";
 
 export const Login = () => {
+  const [userData, setUserData] = useState([]);
   const navigate = useNavigate();
+
   const handleAuth = async () => {
     try {
       const user = await authWithGitHub();
+      setUserData(user);
       if (user) {
         navigate("/meusrepositórios");
+        console.log(user);
       }
     } catch (err) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    if (userData) {
+      console.log(userData);
+    }
+  }, [userData]);
+
   return (
     <S.Container>
       <S.Content>
