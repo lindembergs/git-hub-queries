@@ -51,8 +51,8 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
   gap: 5px;
-  background-color: ${(props) => props.bg || "unset"};
-  color: ${(props) => props.color || "unset"};
+  background-color: ${(props) => props.$bg || "unset"};
+  color: ${(props) => props.$color || "unset"};
   height: 45px;
   border-radius: 8px;
   border: ${(props) => props.bn || "2px solid black"};
