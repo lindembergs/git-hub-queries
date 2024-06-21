@@ -81,3 +81,4 @@ export const Logout = styled.div`
     cursor: pointer;
   }
 `;
+Container.shouldForwardProp = (prop) => prop !== "sidebar";

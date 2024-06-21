@@ -22,15 +22,25 @@ export const Login = () => {
         <img src={logo} alt="logo do git hub" />
         <h1>Sign in</h1>
         <form action="">
-          <S.Input placeholder="E-mail" />
-          <S.Input placeholder="Senha" type="password" />
+          <S.Input
+            placeholder="E-mail"
+            type="email"
+            autoComplete="email"
+            required
+          />
+          <S.Input
+            placeholder="Senha"
+            type="password"
+            autoComplete="current-password"
+            required
+          />
           <Link to="/meusrepositórios">
-            <S.Button bn="none" color="white" bg="black" type="submit">
+            <S.Button $bn="none" $color="white" $bg="black" type="submit">
               Entrar
             </S.Button>
           </Link>
           <span>ou</span>
-          <S.Button onClick={handleAuth} bg="white" type="button">
+          <S.Button onClick={handleAuth} $bg="white" type="button">
             <img src={gitIcon} alt="Github logo" /> Continuar com Github
           </S.Button>
         </form>
