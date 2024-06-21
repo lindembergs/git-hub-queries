@@ -2,24 +2,20 @@ import * as S from "./styles";
 import logo from "../../assets/img/github-img.png";
 import gitIcon from "../../assets/img/logo-git.png";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithPopup, GithubAuthProvider } from "firebase/auth";
-import { auth } from "../../services/firebaseConnection";
+import { authWithGitHub } from "../../services/auth";
 
 export const Login = () => {
   const navigate = useNavigate();
-
-  const handleGitHubLogin = async () => {
-    const provider = new GithubAuthProvider();
+  const handleAuth = async () => {
     try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log(user);
-      navigate("/meusrepositórios");
-    } catch (error) {
-      console.error(error);
+      const user = await authWithGitHub();
+      if (user) {
+        navigate("/meusrepositórios");
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
-
   return (
     <S.Container>
       <S.Content>
@@ -34,7 +30,7 @@ export const Login = () => {
             </S.Button>
           </Link>
           <span>ou</span>
-          <S.Button onClick={handleGitHubLogin} bg="white" type="button">
+          <S.Button onClick={handleAuth} bg="white" type="button">
             <img src={gitIcon} alt="Github logo" /> Continuar com Github
           </S.Button>
         </form>
