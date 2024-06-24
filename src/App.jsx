@@ -1,9 +1,12 @@
+import { UserProvider } from "./contexts/Usercontext";
 import { Routes } from "./Router";
 
 function App() {
   return (
     <>
-      <Routes></Routes>
+      <UserProvider>
+        <Routes></Routes>
+      </UserProvider>
     </>
   );
 }
