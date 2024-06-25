@@ -3,10 +3,11 @@ import logo from "../../assets/img/github-img.png";
 import gitIcon from "../../assets/img/logo-git.png";
 import { Link, useNavigate } from "react-router-dom";
 import { authWithGitHub } from "../../services/auth";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
+import { UserContext } from "../../contexts/Usercontext";
 
 export const Login = () => {
-  const [userData, setUserData] = useState([]);
+  const { userData, setUserData } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleAuth = async () => {

@@ -25,7 +25,7 @@ export const UserNameAndImg = styled.div`
     font-weight: 500;
   }
   img {
-    width: 40px;
+    width: 25px;
     height: 25px;
     border-radius: 50%;
   }
