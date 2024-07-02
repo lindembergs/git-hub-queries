@@ -11,7 +11,7 @@ export const AppRouter = () => (
     <Layout></Layout>
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/meusrepositórios" element={<MyRepositories />} />
+      <Route path="/home" element={<MyRepositories />} />
       <Route path="/outrosrepositórios" element={<OtherRepositories />} />
       <Route path="/buscarusuários" element={<SearchUsers />} />
       <Route path="*" element={<NotFound />}></Route>

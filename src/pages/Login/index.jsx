@@ -19,7 +19,7 @@ export const Login = () => {
           "@userName",
           JSON.stringify(userData.reloadUserInfo.screenName)
         );
-        navigate("/meusrepositórios");
+        navigate("/home");
       }
     } catch (err) {
       console.log(err);
