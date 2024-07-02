@@ -5,4 +5,7 @@ export const Content = styled.div`
   min-height: 100vh;
   min-width: 100vw;
   background-image: url(${NotFound});
+  button {
+    width: 200px;
+  }
 `;
