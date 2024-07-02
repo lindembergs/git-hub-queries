@@ -15,13 +15,3 @@ import axios from "axios";
 export const api = axios.create({
   baseURL: "https://api.github.com",
 });
-
-// export const getUserData = async (user) => {
-//   try {
-//     const response = await api.get(`/users/${user}`, requestHeaders());
-//     return response.data;
-//   } catch (error) {
-//     console.error(error);
-//     throw error;
-//   }
-// };
