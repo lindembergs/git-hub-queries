@@ -8,7 +8,6 @@ import user from "../icons/user.png"; // Certifique-se de que o caminho para a i
 export const Layout = () => {
   const [sidebar, setSidebar] = useState(true);
   const { userData } = useContext(UserContext);
-
   const showSiderbar = () => setSidebar(!sidebar);
 
   return (

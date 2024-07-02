@@ -12,11 +12,14 @@ export const Login = () => {
 
   const handleAuth = async () => {
     try {
-      const user = await authWithGitHub();
-      setUserData(user);
-      if (user) {
+      const userData = await authWithGitHub();
+      setUserData(userData);
+      if (userData) {
+        sessionStorage.setItem(
+          "@userName",
+          JSON.stringify(userData.reloadUserInfo.screenName)
+        );
         navigate("/meusrepositórios");
-        console.log(user);
       }
     } catch (err) {
       console.log(err);
