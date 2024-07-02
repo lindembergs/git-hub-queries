@@ -6,11 +6,11 @@ import { MainContainer } from "../../components/MainContainer/style";
 
 export const OtherRepositories = () => {
   const [searchRepo, setSearchRepo] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   const getRepositories = async () => {
     try {
-      const response = await api.get(`/search/repositories?q=chatbot`);
-      console.log("otherRepositories", response.data.Items);
+      const response = await api.get(`/search/repositories?q=${searchValue}`);
       setSearchRepo(response.data.items);
     } catch (error) {
       console.error("Error fetching repositories:", error);
@@ -18,12 +18,17 @@ export const OtherRepositories = () => {
   };
 
   useEffect(() => {
-    getRepositories();
-  }, []);
+    if (searchValue) {
+      getRepositories();
+    }
+  }, [searchValue]);
   return (
     <MainContainer>
       <h2>Outros repositórios</h2>
-      <Input placeholder="Pesquise por repositórios"></Input>
+      {/* <Input
+        placeholder="Pesquise por repositórios"
+        onChange={(e) => setSearchValue(e.target.value)}
+      ></Input> */}
       {searchRepo.map((repo) => (
         <S.Container key={repo.id}>
           <S.AncorDiv>

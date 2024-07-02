@@ -7,7 +7,7 @@ export const SearchUsers = () => {
   return (
     <MainContainer>
       <h2>Buscar usuários</h2>
-      <Input placeholder="Buscar usuários"></Input>
+      {/* <Input placeholder="Buscar usuários"></Input> */}
       <S.Container>
         <S.Info>
           <figure>

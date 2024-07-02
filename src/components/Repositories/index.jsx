@@ -1,14 +1,17 @@
 import * as S from "./style";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
-
+import { requestHeaders } from "../../services/api";
 export const Repositories = () => {
   const [userId, setUserId] = useState(null);
   const [userRepo, setUserRepo] = useState([]);
 
   const getRepositories = async (userId) => {
     try {
-      const response = await api.get(`/users/${userId}/repos`);
+      const response = await api.get(
+        `/users/${userId}/repos`,
+        requestHeaders()
+      );
       console.log("get", response.data);
       setUserRepo(response.data);
     } catch (error) {

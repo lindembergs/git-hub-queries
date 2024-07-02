@@ -6,7 +6,7 @@ export const MyRepositories = () => {
   return (
     <MainContainer>
       <h2>Meus repositórios</h2>
-      <Input placeholder="Filtrar seus repositórios" />
+      {/* <Input placeholder="Filtrar seus repositórios" /> */}
       <Repositories />
     </MainContainer>
   );
