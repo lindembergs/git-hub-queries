@@ -1,4 +1,4 @@
-import * as S from "../../components/Repositories/style";
+import * as S from "../MyRepositories/styles";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Input } from "../../components/Input";
@@ -25,10 +25,10 @@ export const OtherRepositories = () => {
   return (
     <MainContainer>
       <h2>Outros repositórios</h2>
-      {/* <Input
+      <Input
         placeholder="Pesquise por repositórios"
         onChange={(e) => setSearchValue(e.target.value)}
-      ></Input> */}
+      ></Input>
       {searchRepo.map((repo) => (
         <S.Container key={repo.id}>
           <S.AncorDiv>
