@@ -17,7 +17,6 @@ export const MyRepositories = () => {
         `/users/${userId}/repos`,
         requestHeaders()
       );
-      console.log("get", response.data);
       setUserRepo(response.data);
     } catch (error) {
       console.error("Error fetching repositories:", error);

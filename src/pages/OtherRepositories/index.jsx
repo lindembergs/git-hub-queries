@@ -1,6 +1,6 @@
 import * as S from "../MyRepositories/styles";
 import { useState } from "react";
-import { api } from "../../services/api";
+import { api, requestHeaders } from "../../services/api";
 import { Input } from "../../components/Input";
 import { MainContainer } from "../../components/MainContainer/style";
 import { Button } from "../../components/Button";
@@ -12,12 +12,16 @@ export const OtherRepositories = () => {
 
   const getRepositories = async () => {
     try {
-      const response = await api.get(`/search/repositories?q=${searchValue}`);
+      const response = await api.get(
+        `/search/repositories?q=${searchValue}`,
+        requestHeaders()
+      );
       setSearchRepo(response.data.items);
     } catch (error) {
       console.error("Error fetching repositories:", error);
     }
   };
+
   return (
     <MainContainer>
       <h2>Outros repositórios</h2>
@@ -25,14 +29,14 @@ export const OtherRepositories = () => {
         <Input
           placeholder="Pesquise por repositórios"
           onChange={(e) => setSearchValue(e.target.value)}
-        ></Input>
-        <Button onClick={getRepositories()}></Button>
+        />
+        <Button onClick={getRepositories}>Buscar</Button>
       </InputContainer>
 
       {searchRepo.map((repo) => (
         <S.Container key={repo.id}>
           <S.AncorDiv>
-            <a href={repo.html_url} target="_blank">
+            <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
               {repo.name}
             </a>
             <span>{repo.private ? "Private" : "Public"}</span>

@@ -5,13 +5,33 @@ import { UserImg } from "../../components/icons/User";
 import { FaArchive, FaUser } from "react-icons/fa";
 import { InputContainer } from "../../components/Input/styles";
 import { Button } from "../../components/Button";
+import { api, requestHeaders } from "../../services/api";
+import { useState } from "react";
+
 export const SearchUsers = () => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearchUsers = async () => {
+    try {
+      const response = await api.get(`/users/${searchValue}`, requestHeaders());
+      const data = response.data;
+      console.log(data);
+    } catch (error) {
+      console.error("Erro:", error);
+    }
+  };
+
   return (
     <MainContainer>
       <h2>Buscar usuários</h2>
       <InputContainer>
-        <Input placeholder="Buscar usuários"></Input>
-        <Button></Button>
+        <Input
+          placeholder="Buscar usuários"
+          onChange={(e) => {
+            setSearchValue(e.target.value);
+          }}
+        ></Input>
+        <Button onClick={handleSearchUsers}>Buscar</Button>
       </InputContainer>
       <S.Container>
         <S.Info>

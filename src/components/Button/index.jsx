@@ -1,7 +1,7 @@
 import { FaSistrix } from "react-icons/fa";
-export const Button = () => {
+export const Button = ({ onClick }) => {
   return (
-    <button>
+    <button onClick={onClick}>
       <FaSistrix></FaSistrix>
     </button>
   );
