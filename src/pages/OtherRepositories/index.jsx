@@ -1,8 +1,10 @@
 import * as S from "../MyRepositories/styles";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { api } from "../../services/api";
 import { Input } from "../../components/Input";
 import { MainContainer } from "../../components/MainContainer/style";
+import { Button } from "../../components/Button";
+import { InputContainer } from "../../components/Input/styles";
 
 export const OtherRepositories = () => {
   const [searchRepo, setSearchRepo] = useState([]);
@@ -16,19 +18,17 @@ export const OtherRepositories = () => {
       console.error("Error fetching repositories:", error);
     }
   };
-
-  useEffect(() => {
-    if (searchValue) {
-      getRepositories();
-    }
-  }, [searchValue]);
   return (
     <MainContainer>
       <h2>Outros repositórios</h2>
-      <Input
-        placeholder="Pesquise por repositórios"
-        onChange={(e) => setSearchValue(e.target.value)}
-      ></Input>
+      <InputContainer>
+        <Input
+          placeholder="Pesquise por repositórios"
+          onChange={(e) => setSearchValue(e.target.value)}
+        ></Input>
+        <Button onClick={getRepositories()}></Button>
+      </InputContainer>
+
       {searchRepo.map((repo) => (
         <S.Container key={repo.id}>
           <S.AncorDiv>
