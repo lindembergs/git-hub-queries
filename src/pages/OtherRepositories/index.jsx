@@ -10,7 +10,7 @@ export const OtherRepositories = () => {
   const [searchRepo, setSearchRepo] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
-  const getRepositories = async () => {
+  const handleGetRepositories = async () => {
     try {
       const response = await api.get(
         `/search/repositories?q=${searchValue}`,
@@ -30,7 +30,7 @@ export const OtherRepositories = () => {
           placeholder="Pesquise por repositórios"
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <Button onClick={getRepositories}>Buscar</Button>
+        <Button onClick={handleGetRepositories}>Buscar</Button>
       </InputContainer>
 
       {searchRepo.map((repo) => (

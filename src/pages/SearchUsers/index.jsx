@@ -10,12 +10,14 @@ import { useState } from "react";
 
 export const SearchUsers = () => {
   const [searchValue, setSearchValue] = useState("");
+  const [userData, setUserData] = useState();
 
   const handleSearchUsers = async () => {
     try {
       const response = await api.get(`/users/${searchValue}`, requestHeaders());
       const data = response.data;
       console.log(data);
+      setUserData(data);
     } catch (error) {
       console.error("Erro:", error);
     }
@@ -37,6 +39,9 @@ export const SearchUsers = () => {
         <S.Info>
           <figure>
             <UserImg></UserImg>
+            {userData && (
+              <img src={userData.avatar_url} alt="Foto do perfil do usuário" />
+            )}
           </figure>
           <div>
             <p>Lindemberg</p>
