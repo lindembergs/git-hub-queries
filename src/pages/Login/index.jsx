@@ -7,7 +7,8 @@ import { useEffect, useContext } from "react";
 import { UserContext } from "../../contexts/Usercontext";
 
 export const Login = () => {
-  const { userData, setUserData } = useContext(UserContext);
+  const { userData, setUserData, isLogged, setIsLogged } =
+    useContext(UserContext);
   const navigate = useNavigate();
 
   const handleAuth = async () => {
@@ -19,7 +20,14 @@ export const Login = () => {
           "@userName",
           JSON.stringify(userData.reloadUserInfo.screenName)
         );
-        navigate("/home");
+        setIsLogged(true);
+        sessionStorage.setItem("@isLogged", JSON.stringify(isLogged));
+        if (isLogged) {
+          navigate("/home");
+        }
+        if (!isLogged) {
+          navigate("/");
+        }
       }
     } catch (err) {
       console.log(err);
