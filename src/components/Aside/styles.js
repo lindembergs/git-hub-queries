@@ -78,7 +78,7 @@ export const Logout = styled.div`
   }
   svg {
     font-size: 20px;
-    color: #fff;
+    color: black;
   }
   span {
     font-size: 15px;
