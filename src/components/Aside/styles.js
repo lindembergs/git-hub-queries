@@ -67,18 +67,22 @@ export const Logout = styled.div`
   display: flex;
   padding-left: 10px;
   align-items: flex-end;
-  div {
+  button {
     display: flex;
     gap: 10px;
     align-items: center;
-    color: #fff;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
   }
   svg {
     font-size: 20px;
+    color: #fff;
   }
   span {
-    font-size: 16px;
-    cursor: pointer;
+    font-size: 15px;
+    color: #fff;
   }
 `;
 Container.shouldForwardProp = (prop) => prop !== "sidebar";
