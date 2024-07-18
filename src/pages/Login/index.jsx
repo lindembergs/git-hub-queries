@@ -21,18 +21,18 @@ export const Login = () => {
           JSON.stringify(userData.reloadUserInfo.screenName)
         );
         setIsLogged(true);
-        sessionStorage.setItem("@isLogged", JSON.stringify(isLogged));
-        if (isLogged) {
-          navigate("/home");
-        }
-        if (!isLogged) {
-          navigate("/");
-        }
       }
     } catch (err) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    if (isLogged) {
+      sessionStorage.setItem("@isLogged", JSON.stringify(true));
+      navigate("/home");
+    }
+  }, [isLogged, navigate]);
 
   useEffect(() => {
     if (userData) {
