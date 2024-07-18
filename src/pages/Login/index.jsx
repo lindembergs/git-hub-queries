@@ -51,7 +51,13 @@ export const Login = () => {
             required
           />
           <Link to="/meusrepositórios">
-            <S.Button $bn="none" $color="white" $bg="black" type="submit">
+            <S.Button
+              disabled={true}
+              $bn="none"
+              $color="white"
+              $bg="black"
+              type="submit"
+            >
               Entrar
             </S.Button>
           </Link>
