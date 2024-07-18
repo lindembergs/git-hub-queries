@@ -1,7 +1,6 @@
 import * as S from "./styles";
 import { Input } from "../../components/Input";
-import { MainContainer } from "./../../components/MainContainer/style";
-import { UserImg } from "../../components/icons/User";
+import { MainContainer } from "../../components/MainContainer/style";
 import { FaArchive, FaUser } from "react-icons/fa";
 import { InputContainer } from "../../components/Input/styles";
 import { Button } from "../../components/Button";
@@ -10,16 +9,21 @@ import { useState } from "react";
 
 export const SearchUsers = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSearchUsers = async () => {
+    setLoading(true);
+    setError(null);
     try {
       const response = await api.get(`/users/${searchValue}`, requestHeaders());
       const data = response.data;
-      console.log(data);
       setUserData(data);
     } catch (error) {
-      console.error("Erro:", error);
+      setError("Erro ao buscar usuário");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -29,36 +33,36 @@ export const SearchUsers = () => {
       <InputContainer>
         <Input
           placeholder="Buscar usuários"
-          onChange={(e) => {
-            setSearchValue(e.target.value);
-          }}
-        ></Input>
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
         <Button onClick={handleSearchUsers}>Buscar</Button>
       </InputContainer>
-      <S.Container>
-        <S.Info>
-          <figure>
-            <UserImg></UserImg>
-            {userData && (
+      {loading && <p>Carregando...</p>}
+      {error && <p>{error}</p>}
+      {userData && (
+        <S.Container>
+          <S.Info>
+            <figure>
               <img src={userData.avatar_url} alt="Foto do perfil do usuário" />
-            )}
-          </figure>
-          <div>
-            <p>Lindemberg</p>
-            <S.Items>
-              <div>
-                <FaArchive></FaArchive>
-                <span>0</span>
-              </div>
-              <div>
-                <FaUser></FaUser>
-                <span>1</span>
-              </div>
-            </S.Items>
-          </div>
-        </S.Info>
-        <button>Repositórios</button>
-      </S.Container>
+            </figure>
+            <div>
+              <p>{userData.name}</p>
+              <S.Items>
+                <div>
+                  <FaArchive />
+                  <span>{userData.public_repos}</span>
+                </div>
+                <div>
+                  <FaUser />
+                  <span>{userData.followers}</span>
+                </div>
+              </S.Items>
+            </div>
+          </S.Info>
+          <Button>Repositórios</Button>
+        </S.Container>
+      )}
     </MainContainer>
   );
 };

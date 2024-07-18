@@ -31,4 +31,5 @@ export const Input = styled.input`
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   padding-inline: 15px;
+  margin-top: -40px;
 `;

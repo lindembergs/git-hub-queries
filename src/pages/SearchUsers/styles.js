@@ -34,7 +34,7 @@ export const Info = styled.div`
     height: 100px;
     margin-right: 20px;
   }
-  figure svg {
+  figure img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
