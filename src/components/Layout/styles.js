@@ -20,6 +20,7 @@ export const UserNameAndImg = styled.div`
   justify-content: flex-end;
   align-items: center;
   margin-top: -65px;
+  padding-right: 10px;
   span {
     font-size: 15px;
     font-weight: 500;

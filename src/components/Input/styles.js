@@ -22,7 +22,12 @@ export const InputContainer = styled.div`
     color: white;
     font-size: 16px;
   }
+
+  @media (max-width: 500px) {
+    width: 86vw;
+  }
 `;
+
 export const Input = styled.input`
   width: 100%;
   height: 100%;
