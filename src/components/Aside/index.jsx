@@ -38,19 +38,19 @@ export const Aside = ({ active }) => {
         <S.PageOptions>
           <FaArchive />
           <Link to="/home">
-            <span>Meus repositórios</span>
+            <span onClick={closeSidebar}>Meus repositórios</span>
           </Link>
         </S.PageOptions>
         <S.PageOptions>
           <FaSistrix />
           <Link to="/outrosrepositórios">
-            <span>Outros repositórios</span>
+            <span onClick={closeSidebar}>Outros repositórios</span>
           </Link>
         </S.PageOptions>
         <S.PageOptions>
           <FaUser />
           <Link to="/buscarusuários">
-            <span>Buscar usuários</span>
+            <span onClick={closeSidebar}>Buscar usuários</span>
           </Link>
         </S.PageOptions>
         <S.Logout>
