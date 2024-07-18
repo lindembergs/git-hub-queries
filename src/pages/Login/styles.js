@@ -60,4 +60,10 @@ export const Button = styled.button`
   font-weight: 500;
   width: ${(props) => props.w || "100%"};
   cursor: pointer;
+  &:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 `;

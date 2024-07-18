@@ -11,5 +11,4 @@ export const requestHeaders = () => ({
 
 export const api = axios.create({
   baseURL: "https://api.github.com",
-  timeout: 3000,
 });
