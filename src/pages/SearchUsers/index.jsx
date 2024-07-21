@@ -22,7 +22,7 @@ export const SearchUsers = () => {
       const response = await api.get(`/users/${searchValue}`, requestHeaders());
       const data = response.data;
       setUserData(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       setError("Erro ao buscar usuário");
     } finally {
