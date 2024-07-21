@@ -1,6 +1,6 @@
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
-import { MainContainer } from "../MainContainer/style";
+import { SpinnerBox } from "./style";
 
 const override = css`
   display: block;
@@ -10,7 +10,7 @@ const override = css`
 
 export const Loading = () => {
   return (
-    <MainContainer>
+    <SpinnerBox>
       <div className="sweet-loading" style={{ marginLeft: "30px" }}>
         <ClipLoader
           color="#0f24e6"
@@ -20,6 +20,6 @@ export const Loading = () => {
           data-testid="loader"
         />
       </div>
-    </MainContainer>
+    </SpinnerBox>
   );
 };
