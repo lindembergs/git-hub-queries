@@ -47,9 +47,6 @@ export const Content = styled.div`
   }
 `;
 export const PageOptions = styled.div`
-  display: flex;
-  gap: 10px;
-  align-items: center;
   padding-left: 8px;
   svg {
     color: white;
@@ -60,7 +57,21 @@ export const PageOptions = styled.div`
     color: #fff;
     cursor: pointer;
   }
+  div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
   div:hover {
+    border-bottom: 2px solid blue;
+    width: fit-content;
+    color: blue;
+    margin-left: 15px;
+    transition: all 0.3s ease-in-out;
+    span,
+    svg {
+      color: #377cd0;
+    }
   }
 `;
 

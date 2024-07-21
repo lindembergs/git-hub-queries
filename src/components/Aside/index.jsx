@@ -36,22 +36,28 @@ export const Aside = ({ active }) => {
       <S.Content>
         <img src={logo} alt="logo do Git Hub" />
         <S.PageOptions>
-          <FaArchive />
-          <Link to="/home">
-            <span onClick={closeSidebar}>Meus repositórios</span>
-          </Link>
+          <div>
+            <FaArchive />
+            <Link to="/home">
+              <span onClick={closeSidebar}>Meus repositórios</span>
+            </Link>
+          </div>
         </S.PageOptions>
         <S.PageOptions>
-          <FaSistrix />
-          <Link to="/outrosrepositórios">
-            <span onClick={closeSidebar}>Outros repositórios</span>
-          </Link>
+          <div>
+            <FaSistrix />
+            <Link to="/outrosrepositórios">
+              <span onClick={closeSidebar}>Outros repositórios</span>
+            </Link>
+          </div>
         </S.PageOptions>
         <S.PageOptions>
-          <FaUser />
-          <Link to="/buscarusuários">
-            <span onClick={closeSidebar}>Buscar usuários</span>
-          </Link>
+          <div>
+            <FaUser />
+            <Link to="/buscarusuários">
+              <span onClick={closeSidebar}>Buscar usuários</span>
+            </Link>
+          </div>
         </S.PageOptions>
         <S.Logout>
           <div>
