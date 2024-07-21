@@ -5,6 +5,7 @@ import { FaArchive, FaUser } from "react-icons/fa";
 import { InputContainer } from "../../components/Input/styles";
 import { Button } from "../../components/Button";
 import { Loading } from "../../components/Loading";
+import userNotFound from "../../assets/img/notfound-image.svg";
 import { api, requestHeaders } from "../../services/api";
 import { useState } from "react";
 
@@ -41,8 +42,12 @@ export const SearchUsers = () => {
         <Button onClick={handleSearchUsers}>Buscar</Button>
       </InputContainer>
       {loading && <Loading></Loading>}
-      {error && <p>{error}</p>}
-      {userData ? (
+      {error && (
+        <>
+          <img src={userNotFound} alt="" />
+        </>
+      )}
+      {userData && (
         <S.Container>
           <S.Info>
             <a href={userData.html_url} target="_blank">
@@ -75,8 +80,6 @@ export const SearchUsers = () => {
             <button>Repositórios</button>
           </a>
         </S.Container>
-      ) : (
-        <strong>Usuário não encontrado!</strong>
       )}
     </MainContainer>
   );
