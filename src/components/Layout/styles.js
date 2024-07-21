@@ -20,14 +20,14 @@ export const UserNameAndImg = styled.div`
   justify-content: flex-end;
   align-items: center;
   margin-top: -65px;
-  padding-right: 10px;
+  padding-right: 2%;
   span {
     font-size: 15px;
     font-weight: 500;
   }
   img {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
   }
 `;
