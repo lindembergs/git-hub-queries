@@ -37,7 +37,6 @@ export const SearchUsers = () => {
           placeholder="Buscar usuários"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          autoFocus
         />
         <Button onClick={handleSearchUsers}>Buscar</Button>
       </InputContainer>
