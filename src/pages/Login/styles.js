@@ -33,7 +33,7 @@ export const Content = styled.div`
   }
   button img {
     height: 20px;
-    width: 30px;
+    width: 35px;
   }
 `;
 
@@ -60,6 +60,11 @@ export const Button = styled.button`
   font-weight: 500;
   width: ${(props) => props.w || "100%"};
   cursor: pointer;
+  &:hover {
+    background-color: black;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+  }
   &:disabled {
     background-color: #ccc;
     color: #666;
