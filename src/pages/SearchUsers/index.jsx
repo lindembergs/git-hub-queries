@@ -71,7 +71,7 @@ export const SearchUsers = () => {
               </S.Items>
             </S.InfoContent>
           </S.Info>
-          <a href={userData.repositories} target="_blank">
+          <a href={userData.repos_url} target="_blank">
             <button>Repositórios</button>
           </a>
         </S.Container>
