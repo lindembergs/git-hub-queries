@@ -60,6 +60,8 @@ export const PageOptions = styled.div`
     color: #fff;
     cursor: pointer;
   }
+  div:hover {
+  }
 `;
 
 export const Logout = styled.div`

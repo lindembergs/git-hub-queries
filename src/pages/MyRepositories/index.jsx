@@ -11,6 +11,7 @@ import { Loading } from "../../components/Loading";
 export const MyRepositories = () => {
   const [userId, setUserId] = useState(null);
   const [userRepo, setUserRepo] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const getRepositories = async (userId) => {
@@ -21,10 +22,23 @@ export const MyRepositories = () => {
         requestHeaders()
       );
       setUserRepo(response.data);
+      setFilteredData(response.data);
     } catch (error) {
       console.error("Error fetching repositories:", error);
     } finally {
       setIsLoading(false);
+    }
+  };
+  const handleSearch = (e) => {
+    const search = e.target.value.toLowerCase();
+    if (search === "") {
+      setFilteredData(userRepo);
+    } else {
+      const filtro = userRepo.filter((item) => {
+        const itemNameLower = item.name.toLowerCase();
+        return itemNameLower.includes(search);
+      });
+      setFilteredData(filtro);
     }
   };
 
@@ -40,13 +54,16 @@ export const MyRepositories = () => {
     <MainContainer>
       <h2>Meus repositórios</h2>
       <InputContainer>
-        <Input placeholder="Filtrar seus repositórios" />
+        <Input
+          placeholder="Filtrar seus repositórios"
+          onChange={handleSearch}
+        />
         <Button></Button>
       </InputContainer>
       {isLoading ? (
         <Loading></Loading>
       ) : (
-        userRepo.map((repo) => (
+        filteredData.map((repo) => (
           <S.Container key={repo.id}>
             <S.AncorDiv>
               <a href={repo.html_url} target="_blank">
