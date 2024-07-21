@@ -42,7 +42,7 @@ export const SearchUsers = () => {
       </InputContainer>
       {loading && <Loading></Loading>}
       {error && <p>{error}</p>}
-      {userData && (
+      {userData ? (
         <S.Container>
           <S.Info>
             <a href={userData.html_url} target="_blank">
@@ -75,6 +75,8 @@ export const SearchUsers = () => {
             <button>Repositórios</button>
           </a>
         </S.Container>
+      ) : (
+        <strong>Usuário não encontrado!</strong>
       )}
     </MainContainer>
   );
