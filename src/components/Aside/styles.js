@@ -63,9 +63,9 @@ export const PageOptions = styled.div`
     align-items: center;
   }
   div:hover {
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid #377cd0;
     width: fit-content;
-    color: blue;
+    color: #377cd0;
     margin-left: 15px;
     transition: all 0.3s ease-in-out;
     span,
@@ -96,6 +96,12 @@ export const Logout = styled.div`
   span {
     font-size: 15px;
     color: #fff;
+  }
+  div:hover {
+    border-bottom: 2px solid #377cd0;
+    width: fit-content;
+    margin-left: 10px;
+    transition: all 0.3s ease-in-out;
   }
 `;
 Container.shouldForwardProp = (prop) => prop !== "sidebar";
