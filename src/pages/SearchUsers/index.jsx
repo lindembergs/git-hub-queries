@@ -57,6 +57,7 @@ export const SearchUsers = () => {
               <a href={userData.html_url} target="_blank">
                 <p>{userData.name}</p>
               </a>
+              <strong>{userData.bio}</strong>
               <S.Items>
                 <div>
                   <FaArchive />

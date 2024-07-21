@@ -30,8 +30,8 @@ export const Info = styled.div`
   gap: 5px;
   color: grey;
   figure {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin-right: 20px;
   }
   figure img {
@@ -39,12 +39,15 @@ export const Info = styled.div`
     height: 100%;
     border-radius: 50%;
   }
+  strong {
+    color: #fff;
+  }
 `;
 export const Items = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   div {
     display: flex;
     align-items: center;
