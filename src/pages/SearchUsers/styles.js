@@ -25,6 +25,12 @@ export const Container = styled.div`
     border-radius: 4px;
   }
 `;
+export const InfoContent = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 5px;
+`;
 export const Info = styled.div`
   display: flex;
   gap: 5px;

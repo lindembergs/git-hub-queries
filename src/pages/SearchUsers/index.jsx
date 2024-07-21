@@ -53,11 +53,12 @@ export const SearchUsers = () => {
                 />
               </figure>
             </a>
-            <div>
+            <S.InfoContent>
               <a href={userData.html_url} target="_blank">
                 <p>{userData.name}</p>
               </a>
               <strong>{userData.bio}</strong>
+              <strong>{userData.location}</strong>
               <S.Items>
                 <div>
                   <FaArchive />
@@ -68,9 +69,11 @@ export const SearchUsers = () => {
                   <span>{userData.followers}</span>
                 </div>
               </S.Items>
-            </div>
+            </S.InfoContent>
           </S.Info>
-          <Button>Repositórios</Button>
+          <a href={userData.repositories} target="_blank">
+            <button>Repositórios</button>
+          </a>
         </S.Container>
       )}
     </MainContainer>
