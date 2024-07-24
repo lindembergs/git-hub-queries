@@ -37,6 +37,8 @@ This project was developed using the following technologies:
 - [css](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [javaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [react + vite](https://vitejs.dev/guide/)
+- [styled components](https://styled-components.com/)
+- [firebase](https://firebase.google.com/?hl=pt)
 
 ## :rocket: Getting started
 
