@@ -42,44 +42,45 @@ export const SearchUsers = () => {
         <Button onClick={handleSearchUsers}>Buscar</Button>
       </InputContainer>
       {loading && <Loading></Loading>}
-      {error && (
+      {error ? (
         <>
           <img src={userNotFound} alt="" />
         </>
-      )}
-      {userData && (
-        <S.Container>
-          <S.Info>
-            <a href={userData.html_url} target="_blank">
-              <figure>
-                <img
-                  src={userData.avatar_url}
-                  alt="Foto do perfil do usuário"
-                />
-              </figure>
-            </a>
-            <S.InfoContent>
+      ) : (
+        userData && (
+          <S.Container>
+            <S.Info>
               <a href={userData.html_url} target="_blank">
-                <p>{userData.name}</p>
+                <figure>
+                  <img
+                    src={userData.avatar_url}
+                    alt="Foto do perfil do usuário"
+                  />
+                </figure>
               </a>
-              <strong>{userData.bio}</strong>
-              <strong>{userData.location}</strong>
-              <S.Items>
-                <div>
-                  <FaArchive />
-                  <span>{userData.public_repos}</span>
-                </div>
-                <div>
-                  <FaUser />
-                  <span>{userData.followers}</span>
-                </div>
-              </S.Items>
-            </S.InfoContent>
-          </S.Info>
-          <a href={userData.repos_url} target="_blank">
-            <button>Repositórios</button>
-          </a>
-        </S.Container>
+              <S.InfoContent>
+                <a href={userData.html_url} target="_blank">
+                  <p>{userData.name}</p>
+                </a>
+                <strong>{userData.bio}</strong>
+                <strong>{userData.location}</strong>
+                <S.Items>
+                  <div>
+                    <FaArchive />
+                    <span>{userData.public_repos}</span>
+                  </div>
+                  <div>
+                    <FaUser />
+                    <span>{userData.followers}</span>
+                  </div>
+                </S.Items>
+              </S.InfoContent>
+            </S.Info>
+            <a href={userData.repos_url} target="_blank">
+              <button>Repositórios</button>
+            </a>
+          </S.Container>
+        )
       )}
     </MainContainer>
   );
